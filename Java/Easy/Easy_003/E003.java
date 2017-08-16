@@ -2,7 +2,7 @@ import java.util.*;
 public class E003
 {
     /**
-     * TODO: only works if shift is >= 26, adjust for all shift amounts (use remainder?)
+     * TODO: only works for shift values up to 26, adjust for all shift amounts (use remainder for roll-over?)
      */
     static int SHIFT = 0;
     public static void main(String[] args)

@@ -1,23 +1,29 @@
 import java.util.*;
-
-/**
- * Created by jenniferwartick on 8/16/17.
- */
 public class E003
 {
+    /**
+     * TODO: only works if shift is >= 26, adjust for all shift amounts (use remainder?)
+     */
+    static int SHIFT = 0;
     public static void main(String[] args)
     {
         Scanner keyboard = new Scanner(System.in);
         
         while(true)
         {
-            System.out.println("Please select '1' or '2'");
-            System.out.println("1. Encrypt text");
-            System.out.println("2. Decrypt text");
-            System.out.println("['0' to exit]");
+            System.out.println("\n--------------------------");
+            System.out.println("Please select:");
+            System.out.println("'1' Encrypt text");
+            System.out.println("'2' Decrypt text");
+            System.out.println("'0' to exit");
             System.out.print(">  ");
             int menu_op = keyboard.nextInt();
             keyboard.nextLine();
+            System.out.println();
+            System.out.print("SPECIFY SHIFT AMOUNT: ");
+            SHIFT = keyboard.nextInt();
+            keyboard.nextLine();
+            System.out.println("--------------------------\n");
             switch(menu_op)
             {
                 case 0: //exit
@@ -31,7 +37,7 @@ public class E003
                     System.out.println("Enter text to encrypt: ");
                     String original_text = keyboard.nextLine();
                     String encrypted_text = Encrypt(original_text);
-                    System.out.println(encrypted_text);
+                    System.out.println("\nEncrypted text:\n" + encrypted_text);
                     break;
                 }
                 
@@ -40,18 +46,17 @@ public class E003
                     System.out.println("Enter text to decrypt: ");
                     String original_text = keyboard.nextLine();
                     String decrypted_text = Decrypt(original_text);
-                    System.out.println(decrypted_text);
+                    System.out.println("\nDecrypted text:\n" + decrypted_text);
                     break;
                 }
             }
         }
-
     }
     
     public static String Encrypt(String s)
     {
         String encrypted = "";
-        int shift = 3, length = s.length();
+        int length = s.length();
         
         for(int i = 0; i<length; i++)
         {
@@ -59,7 +64,7 @@ public class E003
             //ignore non alpha char
             if(c.isLetter(c))
             {
-                c = (char) (s.charAt(i) + shift);
+                c = (char) (s.charAt(i) + SHIFT);
                 if (c <= 'z') // will NOT shift past z
                 {
                     encrypted += c;
@@ -82,7 +87,7 @@ public class E003
     public static String Decrypt(String s)
     {
         String decrypted = "";
-        int shift = 3, length = s.length();
+        int length = s.length();
         
         for(int i = 0; i < length; i++)
         {
@@ -90,7 +95,7 @@ public class E003
             // ignore non alpha char
             if(c.isLetter(c))
             {
-                c = (char) (s.charAt(i) - shift);
+                c = (char) (s.charAt(i) - SHIFT);
                 if (c >= 'a') //will not shift past a
                 {
                     decrypted += c;
@@ -110,7 +115,5 @@ public class E003
         
         return decrypted;
     }
-
-
 
 }

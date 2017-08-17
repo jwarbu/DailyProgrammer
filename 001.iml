@@ -7,6 +7,10 @@
       <sourceFolder url="file://$MODULE_DIR$/Java/Easy/001" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Java/Easy/Easy_003" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Java/Easy/Easy_004" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Java/Easy/Easy0001" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Java/Easy/Easy0002" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Java/Easy/Easy0004" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Java/Easy/Easy0003" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

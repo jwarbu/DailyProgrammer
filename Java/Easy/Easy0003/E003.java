@@ -8,7 +8,7 @@ public class E003
     public static void main(String[] args)
     {
         Scanner keyboard = new Scanner(System.in);
-        
+
         while(true)
         {
             System.out.println("\n--------------------------");
@@ -31,7 +31,7 @@ public class E003
                     System.out.println("Ending program... Goodbye!");
                     System.exit(0);
                 }
-                
+
                 case 1: //encrypt
                 {
                     System.out.println("Enter text to encrypt: ");
@@ -40,7 +40,7 @@ public class E003
                     System.out.println("\nEncrypted text:\n" + encrypted_text);
                     break;
                 }
-                
+
                 case 2: //decrypt
                 {
                     System.out.println("Enter text to decrypt: ");
@@ -52,12 +52,12 @@ public class E003
             }
         }
     }
-    
+
     public static String Encrypt(String s)
     {
         String encrypted = "";
         int length = s.length();
-        
+
         for(int i = 0; i<length; i++)
         {
             Character c = s.charAt(i);
@@ -75,7 +75,7 @@ public class E003
                     encrypted += (char) (c - 26);
                 }
             }
-            
+
             else
             {
                 encrypted += c;
@@ -88,7 +88,7 @@ public class E003
     {
         String decrypted = "";
         int length = s.length();
-        
+
         for(int i = 0; i < length; i++)
         {
             Character c = s.charAt(i);
@@ -106,13 +106,13 @@ public class E003
                     decrypted += (char) (c + 26);
                 }
             }
-            
+
             else
             {
                 decrypted += c;
             }
         }
-        
+
         return decrypted;
     }
 

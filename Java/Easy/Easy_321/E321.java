@@ -22,7 +22,7 @@ public class E321
             {
                 times.add(readLine);
             }
-            
+
             String[] spoken_times = new String[times.size()];
             int loop = times.size();
             for(int i = 0; i<loop; i++)

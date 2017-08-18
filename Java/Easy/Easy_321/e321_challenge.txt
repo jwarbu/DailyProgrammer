@@ -20,3 +20,20 @@ It's eight twenty nine pm
 It's nine pm
 Extension challenges (optional)
 Use the audio clips found here to give your clock a voice.
+
+hour
+01 ~ 12 one ~ twelve
+13 ~ 00 one ~ twelve
+
+ten_minutes
+0 oh + one ~ nine (unless 00)
+1 ten ~ nineteen
+2 twenty
+3 thirty
+4 forty
+5 fifty
+
+one_minutes
+0 ""
+1 ~ 9 one ~ nine
+

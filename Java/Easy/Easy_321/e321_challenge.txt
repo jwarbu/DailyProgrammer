@@ -22,8 +22,10 @@ Extension challenges (optional)
 Use the audio clips found here to give your clock a voice.
 
 hour
-01 ~ 12 one ~ twelve
-13 ~ 00 one ~ twelve
+01 ~ 09 one ~ nine
+10 ~ 12 ten ~ twelve
+13 ~ 21 one ~ nine
+22 ~ 23 ten ~ eleven
 
 ten_minutes
 0 oh + one ~ nine (unless 00)
@@ -37,3 +39,39 @@ one_minutes
 0 ""
 1 ~ 9 one ~ nine
 
+
+read time: 
+"00:00"
+
+split time on ':'
+"00" : "00"
+
+split minutes
+"00"  "0""0"
+> charAt(0),(1)
+
+convert to int, put in array
+0 : 0 0
+
+loop through list
+- String alpha_string = "It's"
+- for first time
+hour = array[0]
+ > if hour>11
+ >> isAM = false
+ >> hour = hour - 12
+ > if hour=0
+ >> alpha_string += tens_array[2]
+ > else if hour<10
+ >>alpha_string += ones_array[hour]
+ > else //if hour<13 shouldn't happen
+ >>alpha_string += tens_array[hour]
+ 
+ ten_mins = array[1]
+ one_mins = array[2]
+ > it(ten=0 && one=0)
+ >> alpha_string += ""
+ >else if ten=0
+ >> alpha_string += "oh"
+ >else if ten=1
+ >> alpha_string += tens_array[one]

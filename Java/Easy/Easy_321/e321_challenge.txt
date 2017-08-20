@@ -69,9 +69,10 @@ hour = array[0]
  
  ten_mins = array[1]
  one_mins = array[2]
- > it(ten=0 && one=0)
+ > if(ten=0 && one=0)
  >> alpha_string += ""
- >else if ten=0
- >> alpha_string += "oh"
- >else if ten=1
- >> alpha_string += tens_array[one]
+ >else if ten==1
+ >> switch(one)
+ >else if ten!=1
+ >>switch(ten)
+ >>switch(one)

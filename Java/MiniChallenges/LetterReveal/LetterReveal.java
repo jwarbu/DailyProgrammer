@@ -95,11 +95,12 @@ public class LetterReveal
                 }
             }
             solved=check;
+            System.out.println();
         }
 
         if(lives==0)
         {
-            System.out.println("Sorry, you didn't guess the word...");
+            System.out.println("Sorry, the correct answer is '" + answer + "'");
         }
         
         else

@@ -51,7 +51,7 @@ public class E321
             }
             if(hour==0)
             {
-                hour = hour + 12;
+                hour = 12;
             }
             hour_str = count[hour];
 

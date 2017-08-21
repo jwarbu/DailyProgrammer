@@ -3,64 +3,73 @@ import java.util.Scanner;
 
 public class LetterReveal
 {
+    public static void printArray(String[] s)
+    {
+        int loop = s.length;
+        for(int i = 0; i<loop; i++)
+        {
+            System.out.print(s[i] + " ");
+        }
+    }
     public static void main(String[] args)
     {
         Scanner keyboard = new Scanner(System.in);
         String answer = "Hello";
-        String[] answer_bank = answer.split("");
+        String[] answer_bank = answer.toLowerCase().split("");
+        String[] guesses = new String[answer_bank.length];
+        for(int i = 0; i<answer_bank.length; i++)
+        {
+            guesses[i] = "_";
+        }
 
         System.out.println("Guess the word!");
         int lives = 10;
-        boolean flag = true;
+        boolean solved = false;
+        boolean inAnswer;
 
-        System.out.println(">_ _ _ _ _");
-
-        while(lives!=0||flag)
+        while(lives!=0 && !solved)
         {
-            String guess = keyboard.nextLine();
-            System.out.println("> ");
-            boolean inAnswer= false;
-            int[] answerIndex = new int[answer_bank.length];
-            for(int i = 0; i<answer_bank.length; i++)
-            {
-                answerIndex[i]= -1;
-            }
+            inAnswer = false;
+            printArray(guesses);
+            System.out.print("\n> ");
+            String guess = keyboard.nextLine().toLowerCase();
 
-            for(int i = 0; i<answer_bank.length;i++)
+            int loop = answer_bank.length;
+            for(int i = 0; i<loop;i++)
             {
                 if (guess.equals(answer_bank[i]))
                 {
                     inAnswer = true;
-                    answerIndex[i]=i;
-                }
-            }
 
-            if(inAnswer)
-            {
-                for(int i = 0; i<answerIndex.length; i++)
-                {
-                    if(answerIndex[i]!=-1)
-                    {
-                        System.out.print(" " + answer_bank[answerIndex[i]]);
-                    }
-                    else
-                    {
-                        System.out.print(" _");
-                    }
+                    guesses[i] = answer_bank[i];
                 }
             }
-            else
+            if(!inAnswer)
             {
                 lives--;
-                System.out.println("\"" + guess + "\" is not in the word! " + lives + "lives left!");
-                System.out.println(">_ _ _ _ _");
-
+                System.out.println("'" + guess + "' is not in the word! " + lives + " guesses left!");
             }
+            
+            //Check if solved
+            boolean check = true;
+            for(int i = 0; i<guesses.length; i++)
+            {
+                if(guesses[i].equals("_"))
+                {
+                    check = false;
+                }
+            }
+            solved=check;
         }
 
         if(lives==0)
         {
             System.out.println("Sorry, you didn't guess the word...");
+        }
+        
+        else
+        {
+            System.out.println("Correct! The answer is '" + answer + "'");
         }
     }
 }

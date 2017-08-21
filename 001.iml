@@ -12,7 +12,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Java/Easy/Easy0002" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Java/Easy/Easy0003" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Java/Easy/Easy0004" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Java/MiniChallenges/LetterReveal" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
